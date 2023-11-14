@@ -1,0 +1,49 @@
+body {
+  background-color: #ffc0cb;
+  font-family: 'Roboto', sans-serif;
+ }
+ 
+ .neon-border {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 24px;
+  color: #ff69b4;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: center;
+  letter-spacing: 2px;
+  animation: flicker 1s infinite;
+ }
+ 
+ .neon-border:before,
+ .neon-border:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  border: 1px solid #ff69b4;
+  animation: flicker 1s infinite;
+ }
+ 
+ .neon-border:before {
+  right: -5px;
+  bottom: -5px;
+  border-right: none;
+  border-bottom: none;
+ }
+ 
+ .neon-border:after {
+  left: -5px;
+  top: -5px;
+  border-left: none;
+  border-top: none;
+ }
+ 
+ @keyframes flicker {
+   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+   20%, 22%, 24%, 55% { opacity: 0; }
