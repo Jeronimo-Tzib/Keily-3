@@ -1,49 +1,61 @@
 body {
-  background-color: #ffc0cb;
-  font-family: 'Roboto', sans-serif;
- }
- 
- .neon-border {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+#heartContainer {
   position: relative;
   display: inline-block;
-  padding: 5px 10px;
-  font-size: 24px;
-  color: #ff69b4;
-  background: none;
-  border: none;
-  outline: none;
-  text-align: center;
-  letter-spacing: 2px;
-  animation: flicker 1s infinite;
- }
- 
- .neon-border:before,
- .neon-border:after {
-  content: '';
+}
+
+#heart {
+  width: 100px;
+  height: 90px;
+  background-color: transparent;
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  border: 1px solid #ff69b4;
-  animation: flicker 1s infinite;
- }
- 
- .neon-border:before {
-  right: -5px;
-  bottom: -5px;
-  border-right: none;
-  border-bottom: none;
- }
- 
- .neon-border:after {
-  left: -5px;
-  top: -5px;
-  border-left: none;
-  border-top: none;
- }
- 
- @keyframes flicker {
-   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-   20%, 22%, 24%, 55% { opacity: 0; }
+  animation: pulse 1s infinite;
+  border: 2px solid #ff66b2; /* Neon Pink */
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+#textContainer {
+  margin-top: 20px;
+}
+
+#loveText {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.heartSymbol {
+  color: #ff66b2; /* Neon Pink */
+}
+
+#endlessLove {
+  font-size: 18px;
+  color: #999;
+  margin: 5px 0 0 0;
+}
